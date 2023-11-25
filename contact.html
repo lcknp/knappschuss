@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 200px;
+            background-color: #444;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 1;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+            margin-bottom: 10px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            margin-left: 300px;
+            margin-top: 20px; /* Hinzugefügte obere Marge */
+            padding: 20px;
+            transition: margin-left 0.5s;
+        }
+
+        main.enlarge {
+            margin-left: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Media Query für schwebendes (floating) Seitenmenü bei kleineren Bildschirmen */
+        @media only screen and (max-width: 900px) {
+            nav {
+                position: static;
+                width: 100%;
+                height: auto;
+                background-color: #333;
+                padding: 10px;
+            }
+
+            nav a {
+                margin-bottom: 5px;
+            }
+
+            main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" onclick="toggleMenu()">Overview</a>
+        <a href="gallery.html" onclick="toggleMenu()">Gallery</a>
+        <a href="#" onclick="toggleMenu()">Contact</a>
+        <a href="https://www.instagram.com/knapp.schuss/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a>
+    </nav>
+
+    <main>
+        <h1>Contact</h1>
+        <p>About Me:</p>
+        <p>Age: 23</p>
+        <p>Location: Kappel</p>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('main').classList.toggle('enlarge');
+        }
+    </script>
+
+</body>
+</html>

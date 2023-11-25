@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Fotografieportfolio</title>
+    <title>knappschuss</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
             margin: 0;
@@ -45,10 +46,6 @@
             transition: margin-left 0.5s;
         }
 
-        main.enlarge {
-            margin-left: 0;
-        }
-
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -56,8 +53,9 @@
         }
 
         .gallery-item {
-            width: calc(33.33% - 20px); /* 33.33% minus margin */
-            margin: 10px;
+            width: calc(25% - 20px); /* Vier Bilder in einer Reihe für Bildschirme über 1000px */
+            height: auto; /* Automatische Höhe, passt sich dem Bild an */
+			margin: 10px;
             overflow: hidden;
             position: relative;
         }
@@ -70,7 +68,7 @@
         }
 
         .gallery-item:hover img {
-            opacity: 0.7; /* Anpassen der Transparenz (0.0 - 1.0) */
+            opacity: 0.7;
         }
 
         .overlay {
@@ -96,16 +94,23 @@
             display: flex;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            clear: both;
+        @media only screen and (max-width: 1500px) {
+            .gallery-item {
+                width: calc(33.33% - 20px); /* Drei Bilder in einer Reihe für Bildschirme von 900px bis 1200px */
+            }
         }
 
-        /* Media Query für schwebendes (floating) Seitenmenü bei kleineren Bildschirmen */
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 1200px) {
+            .gallery-item {
+                width: calc(50% - 20px); /* Zwei Bilder in einer Reihe für Bildschirme von 700px bis 900px */
+            }
+        }
+
+        @media only screen and (max-width: 900px) {
+            .gallery-item {
+                width: 100%; /* Ein Bild in einer Reihe für Bildschirme von 600px bis 700px */
+            }
+
             nav {
                 position: static;
                 width: 100%;
@@ -127,9 +132,9 @@
 <body>
 
     <nav>
-        <a href="#" onclick="toggleMenu()">Overview</a>
-        <a href="#gallery" onclick="toggleMenu()">Gallery</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <a href="#">Overview</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
         <a href="https://www.instagram.com/knapp.schuss/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a>
     </nav>
 
@@ -144,6 +149,33 @@
             <div class="gallery-item" onclick="openOverlay(this)">
                 <img src="bild3.jpg" alt="Bild 3">
             </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild4.jpg" alt="Bild 4">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild5.jpg" alt="Bild 5">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild6.jpg" alt="Bild 6">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild7.jpg" alt="Bild 7">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild8.jpg" alt="Bild 8">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild9.jpg" alt="Bild 9">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild10.jpg" alt="Bild 10">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild11.jpg" alt="Bild 11">
+            </div>
+            <div class="gallery-item" onclick="openOverlay(this)">
+                <img src="bild12.jpg" alt="Bild 12">
+            </div>
             <!-- Weitere Bilder hier hinzufügen -->
         </div>
     </main>
@@ -152,11 +184,7 @@
         <img src="" alt="Vergrößertes Bild">
     </div>
 
-    <footer>
-        <p>&copy; 2023 Mein Fotografieportfolio</p>
-    </footer>
-
-    <script>
+        <script>
         function openOverlay(element) {
             var imgSrc = element.querySelector('img').src;
             document.querySelector('.overlay img').src = imgSrc;
@@ -165,10 +193,6 @@
 
         function closeOverlay(element) {
             element.classList.remove('active');
-        }
-
-        function toggleMenu() {
-            document.querySelector('main').classList.toggle('enlarge');
         }
     </script>
 
