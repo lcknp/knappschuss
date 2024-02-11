@@ -4,178 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>knappschuss</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 200px;
-            background-color: #444;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            z-index: 1;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out;
-            margin-bottom: 10px;
-        }
-
-        nav a:hover {
-            color: #ffcc00;
-        }
-
-        main {
-            margin-left: 200px;
-            padding: 20px;
-            transition: margin-left 0.5s;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .gallery-item {
-            width: calc(25% - 20px); /* Vier Bilder in einer Reihe für Bildschirme über 1000px */
-            height: auto; /* Automatische Höhe, passt sich dem Bild an */
-			margin: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            transition: opacity 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover img {
-            opacity: 0.7;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .overlay img {
-            max-width: 80%;
-            max-height: 80vh;
-            width: auto;
-            height: auto;
-        }
-
-        .overlay.active {
-            display: flex;
-        }
-
-        @media only screen and (max-width: 1500px) {
-            .gallery-item {
-                width: calc(33.33% - 20px); /* Drei Bilder in einer Reihe für Bildschirme von 900px bis 1200px */
-            }
-        }
-
-        @media only screen and (max-width: 1200px) {
-            .gallery-item {
-                width: calc(50% - 20px); /* Zwei Bilder in einer Reihe für Bildschirme von 700px bis 900px */
-            }
-        }
-
-        @media only screen and (max-width: 900px) {
-            .gallery-item {
-                width: 100%; /* Ein Bild in einer Reihe für Bildschirme von 600px bis 700px */
-            }
-
-            nav {
-                position: static;
-                width: 100%;
-                height: auto;
-                background-color: #333;
-                padding: 10px;
-            }
-
-            nav a {
-                margin-bottom: 5px;
-            }
-
-            main {
-                margin-left: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
 </head>
-<body>
 
+<body>
     <nav>
         <a href="#">Overview</a>
-        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">gallery</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">bnc</a>
+              <a href="#">cro</a>
+              <a href="#"></a>
+            </div>
+          </div>
         <a href="contact.html">Contact</a>
         <a href="https://www.instagram.com/knapp.schuss/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a>
     </nav>
 
     <main>
         <div class="gallery" id="gallery">
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild1.jpg" alt="Bild 1">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild2.jpg" alt="Bild 2">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild3.jpg" alt="Bild 3">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild4.jpg" alt="Bild 4">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild5.jpg" alt="Bild 5">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild6.jpg" alt="Bild 6">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild7.jpg" alt="Bild 7">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild8.jpg" alt="Bild 8">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild9.jpg" alt="Bild 9">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild10.jpg" alt="Bild 10">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild11.jpg" alt="Bild 11">
-            </div>
-            <div class="gallery-item" onclick="openOverlay(this)">
-                <img src="bild12.jpg" alt="Bild 12">
-            </div>
+            <div class="gallery-sizer"></div> <!-- Gittergröße -->
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (1).jpg" alt="Bild 1">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (2).jpg" alt="Bild 2">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (4).jpg" alt="Bild 3">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (5).jpg" alt="Bild 4">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (6).jpg" alt="Bild 5">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (7).jpg" alt="Bild 6">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (8).jpg" alt="Bild 7">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (9).jpg" alt="Bild 8">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (10).jpg" alt="Bild 9">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (11).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (12).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (13).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (14).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (15).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (16).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (17).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (18).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (19).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (20).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (21).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (22).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (23).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (24).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (25).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (26).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (27).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (28).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (29).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (30).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (31).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (32).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (34).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (35).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (36).jpg" alt="Bild 10">
+                </div>
+                <div class="gallery-item" onclick="openOverlay(this)">
+                    <img src="pics/bild (37).jpg" alt="Bild 10">
+                </div>
             <!-- Weitere Bilder hier hinzufügen -->
         </div>
     </main>
@@ -184,17 +140,6 @@
         <img src="" alt="Vergrößertes Bild">
     </div>
 
-        <script>
-        function openOverlay(element) {
-            var imgSrc = element.querySelector('img').src;
-            document.querySelector('.overlay img').src = imgSrc;
-            document.querySelector('.overlay').classList.add('active');
-        }
-
-        function closeOverlay(element) {
-            element.classList.remove('active');
-        }
-    </script>
-
+    <script src="masonry.js"></script>
 </body>
 </html>
