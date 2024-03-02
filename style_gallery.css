@@ -1,15 +1,13 @@
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
+.gallery  {
+	column-count: 4;
+	column-gap: 7px;
 }
 
-.gallery-item {
-    width: calc(20% - 20px); /* Breite der Elemente - 4 Elemente pro Reihe */
-}
-
-.gallery-sizer {
-    width: calc(5% - 20px); /* Gittergröße entsprechend der Elementbreite */
-}
+.gallery .gallery-item {
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 100%;
+}    
 
 img {
     width: 100%;

@@ -1,30 +1,30 @@
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    background-color: #ffffff;
-    padding: 10px;
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-    z-index: 1;
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 300px;
+background-color: #ffffff;
+padding: 10px;
+padding-left: 20px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: left;
+z-index: 1;
 }
 
 nav a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-    margin-bottom: 10px;
+color: #000000;
+text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+transition: color 0.3s ease-in-out;
+margin-bottom: 10px;
 }
 
 nav a:hover {
-    color: #ffcc00;
+color: #ffcc00;
 }
 
 /* Dropdown Button */
@@ -38,6 +38,7 @@ font-weight: bold;
 font-size: 16px;
 transition: color 0.3s ease-in-out;
 margin-bottom: 10px;
+margin-left: -5px;
 }
     
 /* Dropdown button on hover & focus */
