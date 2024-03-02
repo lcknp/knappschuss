@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1500px) {
+    .gallery-sizer {
+    width: calc(5% - 20px); /* Gittergröße entsprechend der Elementbreite */
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .gallery-sizer {
+    width: calc(10% - 20px); /* Gittergröße entsprechend der Elementbreite */
+    }
+
+    .gallery-item {
+    width: calc(50% - 20px); /* Breite der Elemente - 4 Elemente pro Reihe */
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .gallery-sizer {
+    width: calc(10% - 20px); /* Gittergröße entsprechend der Elementbreite */
+    }
+
+    .gallery-item {
+    width: calc(50% - 20px); /* Breite der Elemente - 4 Elemente pro Reihe */
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        padding: 10px;
+    }
+
+    nav a {
+        margin-bottom: 5px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+}
