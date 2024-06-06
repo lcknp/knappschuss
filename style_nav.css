@@ -1,24 +1,39 @@
 nav {
-position: fixed;
-top: 0;
-left: 0;
-height: 100%;
-width: 300px;
-background-color: #ffffff;
-padding: 10px;
-padding-left: 20px;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-align-items: left;
-z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #ffffff;
+    padding: 10px;
+    padding-left: 20px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    z-index: 1;
+    font-family: 'Special Elite';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav img{
+    width: 200px;
+    height: 200px;
+}
+
+nav h1{
+    margin-left: 15px;
+    font-size: 20px;
+    font-family: 'Special Elite';
 }
 
 nav a {
-color: #000000;
-text-decoration: none;
-transition: color 0.3s ease-in-out;
-margin-bottom: 10px;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    margin-bottom: 10px;
 }
 
 nav a:hover {
@@ -34,8 +49,8 @@ color: #000000;
 transition: color 0.3s ease-in-out;
 margin-bottom: 10px;
 margin-left: -5px;
-font-family: 'Waiting for the Sunrise';
-font-size:30px; 
+font-family: 'Special Elite';
+font-size:20px; 
 letter-spacing: 6px; 
 font-weight: bold;
 }
