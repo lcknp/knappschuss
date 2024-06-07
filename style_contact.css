@@ -4,11 +4,11 @@ body {
 }
 
 main {
-    margin-left: 300px;
+    margin-left: 500px;
     margin-top: 50px;
 }
 
-img{
+.profilbild img{
     width: 30%;
     margin-left: 300px;
     margin-top: -10%;
